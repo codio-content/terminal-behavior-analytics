@@ -1,0 +1,52 @@
+module0:
+  exercise2:
+      commands:
+          - hg clone https://bitbucket.org/yourUserName/web-starter
+          - cd web-starter
+          - npm install
+          - node index.js
+      repeated:
+  exercise3:
+      commands:
+          - node web-starter/index.js
+      repeated:
+          - node web-starter/index.js
+module2:
+  exercise1:
+      commands:
+          - cd web-starter
+          - hg status
+          - hg diff
+          - hg log
+          - hg log -G
+      repeated:
+  exercise2:
+      commands:
+          - hg config --edit
+          - hg commit
+      repeated:
+  exercise3:
+      commands:
+          - hg commit
+      repeated:
+          - hg commit
+  exercise4:
+      commands:
+          - hg update
+      repeated:
+          - hg update
+  exercise5:
+      commands:
+          - hg push
+      repeated:
+  exercise6:
+      commands:
+          - hg update
+          - hg commit
+          - hg log -G
+      repeated:
+  exercise7:
+      commands:
+          - hg rebase
+          - hg merge
+      repeated:
