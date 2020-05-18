@@ -1,0 +1,26 @@
+module0:
+  commands:
+      - hg clone https://bitbucket.org/yourUserName/web-starter
+      - cd web-starter
+      - npm install
+      - node index.js
+      - node web-starter/index.js
+  repeated:
+      - node web-starter/index.js
+module2:
+  commands:
+      - cd web-starter
+      - hg status
+      - hg diff
+      - hg log
+      - hg log -G
+      - hg config --edit
+      - hg commit
+      - hg update
+      - hg push
+      - hg rebase
+      - hg merge
+  repeated:
+      - hg commit
+      - hg update
+

@@ -1,17 +1,16 @@
 # input arguments:
 # 1: filename.yaml
 # 2: module#
-# 3: exercise#
 
 import yaml, sys, os
 
-#loading assets for the specified question
+#loading assets for the specified module
 file = open(sys.argv[1], 'r')
 modules = yaml.load( file )
 mod = sys.argv[2]
-ex = sys.argv[3]
-commands = modules.get(mod).get(ex).get('commands')
-repeated = modules.get(mod).get(ex).get('repeated')
+
+commands = modules.get(mod).get('commands')
+repeated = modules.get(mod).get('repeated')
 
 #loading in student bash history and comparing
 bash_history = open(os.path.expanduser('~/.bash_history') ,'r')
@@ -31,8 +30,9 @@ for line in commands:
             commandCount+=1
             
 #print out results
-print("For " + mod + " " + ex +": ")
+print("For " + mod + ": ")
 print("-----------------------------------------")
 print("Percent of commands run: " + str(commandCount / len(commands) * 100.0) )
 print("Number of repeated commands: " + str(repeatedCount) )
 print("Number of unexpectedly duplicated commands: " + str(duplicateCount) )
+print("")
